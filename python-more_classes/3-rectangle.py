@@ -56,4 +56,7 @@ class Rectangle:
 
     def __repr__(self):
         """Return a string representation for debugging."""
-        return f"<{self.__class__.__module__}.{self.__class__.__name__} object at {hex(id(self))}>"
+        cls_name = self.__class__.__name__
+        cls_module = self.__class__.__module__
+        obj_address = hex(id(self))
+        return f"<{cls_module}.{cls_name} object at {obj_address}>"
