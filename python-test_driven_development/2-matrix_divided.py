@@ -1,5 +1,5 @@
-
-n that divides all elements of a matrix
+#!/usr/bin/python3
+# function that divides all elements of a matrix
 """
     Define 'matrix_division' function.
 """

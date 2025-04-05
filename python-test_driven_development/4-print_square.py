@@ -1,19 +1,15 @@
 #!/usr/bin/python3
-# function that prints My name is <first name> <last name>
 """
-    Define 'say_my_name'  function.
+
+This module is composed by a function that prints a square with the character #
 """
 
 
-def say_my_name(first_name, last_name=""):
-    """
-        Print a name.
-        Args:
-            first_name (str): first name to print.
-            last_name (str): last name to print.
-    """
-    if not isinstance(first_name, str):
-        raise TypeError("first_name must be a string")
-    if not isinstance(last_name, str):
-        raise TypeError("last_name must be a string")
-    print("My name is {} {}".format(first_name, last_name))
+def print_square(size):
+    """ Function that prints a square with the character #"""
+    if not isinstance(size, int):
+        raise TypeError("size must be an integer")
+    if size < 0:
+        raise ValueError("size must be >= 0")
+    for i in range(size):
+        print("#" * size)

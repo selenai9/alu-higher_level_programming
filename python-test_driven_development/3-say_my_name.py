@@ -1,33 +1,19 @@
-
-n that divides all elements of a matrix
+#!/usr/bin/python3
+# function that prints My name is <first name> <last name>
 """
-    Define 'matrix_division' function.
+    Define 'say_my_name'  function.
 """
 
 
-def matrix_divided(matrix, div):
+def say_my_name(first_name, last_name=""):
     """
-        Divide all elements of a matrix.
+        Print a name.
         Args:
-            matrix (list): list of lists of ints or floats.
-            div (int/float): divisor.
-        Return:
-            new matrix representing the result of the division.
+            first_name (str): first name to print.
+            last_name (str): last name to print.
     """
-    if (not isinstance(matrix, list) or matrix == [] or
-            not all(isinstance(row, list) for row in matrix) or
-            not all((isinstance(ele, int) or isinstance(ele, float))
-                    for ele in [num for row in matrix for num in row])):
-        raise TypeError("matrix must be a matrix (list of lists) of "
-                        "integers/floats")
-
-    if not all(len(row) == len(matrix[0]) for row in matrix):
-        raise TypeError("Each row of the matrix must have the same size")
-
-    if not isinstance(div, int) and not isinstance(div, float):
-        raise TypeError("div must be a number")
-
-    if div == 0:
-        raise ZeroDivisionError("division by zero")
-
-    return ([list(map(lambda x: round(x / div, 2), row)) for row in matrix])
+    if not isinstance(first_name, str):
+        raise TypeError("first_name must be a string")
+    if not isinstance(last_name, str):
+        raise TypeError("last_name must be a string")
+    print("My name is {} {}".format(first_name, last_name))
